@@ -1,21 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package recursivebinarysearch;
+
+import java.util.Scanner;
+import java.io.IOException;
+
+
 
 /**
  *
  * @author arafat
  */
 public class RecursiveBinarySearch {
+    
+    /**
+     * 
+     */
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws IOException {
+        Scanner scn = new Scanner(System.in);
+        int input;
+        int size;
+        System.out.print("Please enter search space size:");
+        size = scn.nextInt();
+        //size = dis.readInt();
+        System.out.print(size);
+        int[] space = new int[size];
+        for (int i=0; i<size; i++) {
+            System.out.print(
+                "Please enter a positive integer to build search space:");
+            input = scn.nextInt();
+            space[i] = input;
+        }
     }
     
 }
