@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  *
- * @author arafat
+ * @author arafat eajaz
  */
 public class HermannBottenbruchBinarySearch {
     
