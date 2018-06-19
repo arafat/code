@@ -1,0 +1,10 @@
+/**
+ * Problem Description:
+ * Union-Find algorithm is comprise of 2 parts Union and Find.
+ * Given a set of nodes Union defines the operation of making a connection
+ * between 2 nodes in the set e.g. Union(4, 9) will make a connection between
+ * node labled as 4 and 9.
+ * Find operation on the other hand is respnsible for checking if there is
+ * a connection between 2 nodes e.g. Find(4, 9) will check if 4 and 9 are
+ * connected or not.
+ */
