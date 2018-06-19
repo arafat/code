@@ -15,22 +15,35 @@ public class Client {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int universeSize;
-        int element;
-        String command = "e";
+        String command;
         System.out.print("Please enter universe size: ");
         universeSize = scn.nextInt();
         int[] universe = new int[universeSize];
-        System.out.print("Please add elements to your Universe");
+        System.out.println("Please add elements to your Universe");
         for (int i=0; i<universeSize; i++) {
             System.out.print("Please enter element to be added to Universe: ");
-            element = scn.nextInt();
+            universe[i] = scn.nextInt();
         }
         System.out.printf("Universe: %s", Arrays.toString(universe));
-        while (command != "e") {
+        System.out.println();
+        while (true) {
             System.out.print(
                 "Enter 'u' for Union and 'f' for Find and 'e' to exit: ");
             command = scn.next();
-            System.out.printf("Command: %s", command);
+            switch(command) {
+                case "u":
+                    System.out.println("Call Union");
+                    break;
+                case "f":
+                    System.out.println("Call Find");
+                    break;
+                case "e":
+                    System.out.println("Exit Universe!");
+                    break;
+                default:
+                    System.out.println("Please enter u/f/e only.");
+            }
+            if (command.equals("e")) break;
         }
         System.out.println("Exiting universe.");
     }
