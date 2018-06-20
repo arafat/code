@@ -26,6 +26,7 @@ public class Client {
         }
         System.out.printf("Universe: %s", Arrays.toString(universe));
         System.out.println();
+        QuickFind qf = new QuickFind(universe);
         while (true) {
             System.out.print(
                 "Enter 'u' for Union and 'f' for Find and 'e' to exit: ");

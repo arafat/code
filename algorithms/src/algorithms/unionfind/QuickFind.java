@@ -5,6 +5,8 @@
  */
 package algorithms.unionfind;
 
+import java.util.Arrays;
+
 /**
  * It maintains a set of connected components, a connected component is a
  * graph with connected nodes, if 2 nodes in question belongs to same connected
@@ -20,7 +22,35 @@ package algorithms.unionfind;
  */
 public class QuickFind {
     
-    QuickFind() {
+    private int[] universe;
+    
+    /**
+     * 
+     * @param u Array of elements in the universe.
+     */
+    QuickFind(int[] u) {
+        universe = u;
+        System.out.printf("Universe Create %s", Arrays.toString(universe));
+        
+    }
+    
+    /**
+     * 
+     * @param ele1 Element in the universe.
+     * @param ele2 Element in the universe.
+     */
+    public void Union(int ele1, int ele2) {
+        System.out.printf("Creating union between %d and %d", ele1, ele2);
+    }
+    
+    /**
+     * 
+     * @param ele1 Element in the universe.
+     * @param ele2 Element in the universe.
+     * @return true/false whether there is a connection or not.
+     */
+    public boolean Find(int ele1, int ele2) {
+        return universe[ele1] == universe[ele2];
     }
     
 }
