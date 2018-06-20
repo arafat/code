@@ -24,8 +24,6 @@ public class Client {
             System.out.print("Please enter element to be added to Universe: ");
             universe[i] = scn.nextInt();
         }
-        System.out.printf("Universe: %s", Arrays.toString(universe));
-        System.out.println();
         QuickFind qf = new QuickFind(universe);
         while (true) {
             System.out.print(
@@ -33,10 +31,24 @@ public class Client {
             command = scn.next();
             switch(command) {
                 case "u":
-                    System.out.println("Call Union");
+                    System.out.println(
+                            "Enter 2 elements to create union.");
+                    System.out.print("First Element: ");
+                    int ele1 = scn.nextInt();
+                    System.out.print("Second Element: ");
+                    int ele2 = scn.nextInt();
+                    qf.Union(ele1, ele2);
                     break;
                 case "f":
-                    System.out.println("Call Find");
+                    System.out.println(
+                            "Enter 2 elements to find the connection");
+                    System.out.print("First Element: ");
+                    int ele3 = scn.nextInt();
+                    System.out.print("Second Element: ");
+                    int ele4 = scn.nextInt();
+                    System.out.printf(
+                            "Are they connected?: %s", qf.Find(ele3, ele4));
+                    System.out.println();
                     break;
                 case "e":
                     System.out.println("Exit Universe!");

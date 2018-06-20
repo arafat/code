@@ -30,8 +30,8 @@ public class QuickFind {
      */
     QuickFind(int[] u) {
         universe = u;
-        System.out.printf("Universe Create %s", Arrays.toString(universe));
-        
+        System.out.printf("Universe Created %s", Arrays.toString(universe));
+        System.out.println();
     }
     
     /**
@@ -40,7 +40,13 @@ public class QuickFind {
      * @param ele2 Element in the universe.
      */
     public void Union(int ele1, int ele2) {
-        System.out.printf("Creating union between %d and %d", ele1, ele2);
+        int newRoot = universe[ele2];
+        int oldRoot = universe[ele1];
+        for (int i=0; i<universe.length; i++) {
+            if (universe[i] == oldRoot) universe[i] = newRoot;
+        }
+        System.out.printf("Created union between %d and %d", ele1, ele2);
+        System.out.println();
     }
     
     /**
