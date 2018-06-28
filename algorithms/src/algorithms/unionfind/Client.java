@@ -24,7 +24,8 @@ public class Client {
             System.out.print("Please enter element to be added to Universe: ");
             universe[i] = scn.nextInt();
         }
-        QuickFind qf = new QuickFind(universe);
+        // QuickUnion qf = new QuickUnion(universe);
+        WeightedQuickUnion qf = new WeightedQuickUnion(universe);
         while (true) {
             System.out.print(
                 "Enter 'u' for Union and 'f' for Find and 'e' to exit: ");
