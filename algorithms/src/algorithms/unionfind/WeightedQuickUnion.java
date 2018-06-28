@@ -9,7 +9,22 @@ import java.util.Arrays;
 
 /**
  *
- * @author arafat
+ * Its an improvement over QuickUnion algorithm.
+ * One problem with QuickUnion was that in worst case trees may get very tall
+ * e.g.: If you end up attaching long trees to small one.
+ * 
+ * Weighted Quick Union make sure that always a smaller tree is attached to
+ * longer tree, that way the overall height of the tree is always less.
+ * 
+ * Maintain a weight array which initially store every node with weight 1,
+ * before merging 2 tree compare weights of the roots of both the tree and
+ * attach shorter one to longer one, also update the weight of the root of
+ * final tree.
+ * 
+ * If in a Union operation 2 trees have same root which means that they are
+ * already connected then then we don't have to make another attempt for a
+ * redundant connection as it may effect the weight of the root.
+ * 
  */
 public class WeightedQuickUnion {
     
