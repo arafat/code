@@ -22,6 +22,7 @@ public class WeightedQuickUnion {
      */
     WeightedQuickUnion(int[] u) {
         universe = u;
+        universeWeight = new int[u.length];
         for (int i=0; i<u.length; i++) {
             universeWeight[i] = 1;
         }
@@ -42,8 +43,23 @@ public class WeightedQuickUnion {
      * @param ele2 Element in the universe.
      */
     public void Union(int ele1, int ele2) {
-        universe[FindRoot(ele1)] = FindRoot(ele2);
-        System.out.printf("Created union between %d and %d", ele1, ele2);
+        int root1 = FindRoot(ele1);
+        int root2 = FindRoot(ele2);
+        if (root1 == root2) {
+            System.out.println("Already connected");
+            return;
+        }
+        if (universeWeight[root1] > universeWeight[root2]) {
+            universe[root2] = root1;
+            universeWeight[root1] += universeWeight[root2];
+        } else {
+            universe[root1] = root2;
+            universeWeight[root2] += universeWeight[root1];
+        }
+        System.out.printf("New universe %s", Arrays.toString(universe));
+        System.out.println();
+        System.out.printf("Final universe weights %s", Arrays.toString(
+                universeWeight));
         System.out.println();
     }
     
